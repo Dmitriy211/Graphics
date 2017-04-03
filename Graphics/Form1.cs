@@ -14,7 +14,7 @@ namespace Graphic
     public partial class Form1 : Form
     {
         //Graphics g;
-        Pen pen = new Pen(Color.Blue, 5);
+        Pen pen = new Pen(Color.Blue, 5);        
         GraphicsPath g;
         SolidBrush redBrush = new SolidBrush(Color.Red);
         SolidBrush CoralBrush = new SolidBrush(Color.Coral);
@@ -55,7 +55,7 @@ namespace Graphic
             g.AddLine(m * 2 + a, m * 5 + b, a, m * 4 + b);
             g.AddLine(a, m * 4 + b, m * 2 + a, m * 3 + b);
             g.AddLine(m * 2 + a, m * 3 + b, m * 2 + a, b);
-
+            
             e.Graphics.FillPath(CoralBrush, g);            
         }
 
@@ -87,8 +87,8 @@ namespace Graphic
             DrawStar(e, 700, 0, 10);
             DrawStar(e, 400, 300, 10);
 
-           /* Bitmap bitmap = new Bitmap(@"C:\Users\d_tuchashvili\Documents\Visual Studio 2013\Projects\Graphics\Graphics\bin\Debug\Natural_disaster-03-512.jpg");
-            e.Graphics.DrawImage(bitmap, 60, 10);*/
+            /*Bitmap bitmap = new Bitmap("Bez-imeni-2-_2.gif");  // Раскомменчивать только в крайних случаях
+            e.Graphics.DrawImage(bitmap, 350, 20);*/
 
             DrawShip(e, 100, 100, 10);
         }
