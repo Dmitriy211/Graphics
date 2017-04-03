@@ -17,6 +17,7 @@ namespace Graphic
         Pen pen = new Pen(Color.Blue, 5);
         GraphicsPath g;
         SolidBrush redBrush = new SolidBrush(Color.Red);
+        SolidBrush CoralBrush = new SolidBrush(Color.Coral);
         SolidBrush whBrush = new SolidBrush(Color.White);
         SolidBrush blueBrush = new SolidBrush(Color.Blue);
 
@@ -55,9 +56,10 @@ namespace Graphic
             g.AddLine(a, m * 4 + b, m * 2 + a, m * 3 + b);
             g.AddLine(m * 2 + a, m * 3 + b, m * 2 + a, b);
 
-            e.Graphics.FillPath(redBrush, g);            
+            e.Graphics.FillPath(CoralBrush, g);            
         }
 
+  
         void DrawShip(PaintEventArgs e, float a, float b, float m)
         {           
             e.Graphics.FillEllipse(blueBrush, a, b, 4 * m, 4 * m);
@@ -69,7 +71,14 @@ namespace Graphic
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
-        {            
+        {
+            for (int i = 0; i < 800; i += 100)
+                for (int j = 0; j < 450; j += 100)
+                    e.Graphics.FillEllipse(whBrush, i, j, 2, 2);
+            for (int i = 50; i < 800; i += 100)
+                for (int j = 50; j < 450; j += 100)
+                    e.Graphics.FillEllipse(whBrush, i, j, 2, 2);
+
             DrawStar(e, 0, 0, 10);
             DrawStar(e, 250, 50, 10);
             DrawStar(e, 180, 200, 10);
@@ -77,6 +86,9 @@ namespace Graphic
             DrawStar(e, 600, 250, 10);
             DrawStar(e, 700, 0, 10);
             DrawStar(e, 400, 300, 10);
+
+           /* Bitmap bitmap = new Bitmap(@"C:\Users\d_tuchashvili\Documents\Visual Studio 2013\Projects\Graphics\Graphics\bin\Debug\Natural_disaster-03-512.jpg");
+            e.Graphics.DrawImage(bitmap, 60, 10);*/
 
             DrawShip(e, 100, 100, 10);
         }
