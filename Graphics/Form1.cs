@@ -72,11 +72,11 @@ namespace Graphic
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            for (int i = 0; i < 800; i += 100)
-                for (int j = 0; j < 450; j += 100)
+            for (int i = 0; i < Width; i += 100)
+                for (int j = 0; j < Height; j += 100)
                     e.Graphics.FillEllipse(whBrush, i, j, 2, 2);
-            for (int i = 50; i < 800; i += 100)
-                for (int j = 50; j < 450; j += 100)
+            for (int i = 50; i < Width; i += 100)
+                for (int j = 50; j < Height; j += 100)
                     e.Graphics.FillEllipse(whBrush, i, j, 2, 2);
 
             DrawStar(e, 0, 0, 10);
@@ -87,8 +87,8 @@ namespace Graphic
             DrawStar(e, 700, 0, 10);
             DrawStar(e, 400, 300, 10);
 
-            /*Bitmap bitmap = new Bitmap("Bez-imeni-2-_2.gif");  // Раскомменчивать только в крайних случаях
-            e.Graphics.DrawImage(bitmap, 350, 20);*/
+            Bitmap bitmap = new Bitmap("Bez-imeni-2-_2.gif");  // Раскомменчивать только в крайних случаях
+            e.Graphics.DrawImage(bitmap, 350, 20);
 
             DrawShip(e, 100, 100, 10);
         }

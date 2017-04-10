@@ -47,8 +47,10 @@
             this.pictureBox1.Size = new System.Drawing.Size(760, 305);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
             this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
             this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
+            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
             // Clear_btn
             // 
@@ -102,7 +104,10 @@
             this.Instrument_box.FormattingEnabled = true;
             this.Instrument_box.Items.AddRange(new object[] {
             "Pen",
-            "Line"});
+            "Brush",
+            "Line",
+            "Rectangle",
+            "Ellipse"});
             this.Instrument_box.Location = new System.Drawing.Point(144, 16);
             this.Instrument_box.Name = "Instrument_box";
             this.Instrument_box.Size = new System.Drawing.Size(121, 21);
